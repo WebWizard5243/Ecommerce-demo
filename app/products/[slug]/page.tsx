@@ -60,11 +60,11 @@ export default async function ProductDetailPage({
       <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
-            <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="relative h-96 bg-white-200 rounded-lg overflow-hidden">
               <img
                 src={imageUrl[0]}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
