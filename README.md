@@ -27,25 +27,26 @@ It demonstrates multiple **Next.js rendering strategies** — **SSG**, **ISR**, 
 ```bash
 git clone https://github.com/WebWizard5243/Ecommerce-demo.git
 cd Ecommerce-demo
-
+```
 
 ### 2. Install Dependencies
-
+```undefined
 npm install
+```
 
 ### 3. Setup Environment Variables
-
+```undefined
 DATABASE_URL="postgresql://user:password@host:port/database"
 ADMIN_API_KEY="your_admin_key"
 CLOUDINARY_CLOUD_NAME="your_cloud_name"
 CLOUDINARY_API_KEY="your_cloudinary_api_key"
 CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
+```
 
-
-###4. Database Setup
+### 4. Database Setup
 
 Run the following SQL commands in your PostgreSQL (Neon) database:
-
+```undefined
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
@@ -55,11 +56,13 @@ CREATE TABLE products (
   inventory INTEGER,
   image_urls TEXT[]
 );
+```
   ### 5. Start the Development Server
-
+```undefined
   npm run dev
-
+```
   ## Folder Structure 
+  ```
   app/
 ├── page.tsx               # Home page (SSG)
 ├── products/[slug]/       # Product details (ISR)
@@ -69,5 +72,5 @@ CREATE TABLE products (
 ├── api/upload/            # Image upload API
 lib/
 └── db.ts                  # Database connection & helper functions
-
+```
 
