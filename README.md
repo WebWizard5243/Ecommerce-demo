@@ -2,7 +2,7 @@
 
 # E-Commerce Product Catalog 
 
-**Name - Md Kaif Nawaz Khurram**
+**Name - Md Kaif Nawaz Khurram**\
 **Date - 29/10/2025**
 
 This project is a full-stack web application built using **Next.js 16**, **TypeScript**, **PostgreSQL (Neon)**, and **Cloudinary**.  
