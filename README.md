@@ -39,11 +39,22 @@ npm install
 
 ### 3. Setup Environment Variables
 ```undefined
-DATABASE_URL="postgresql://user:password@host:port/database"
-ADMIN_API_KEY="your_admin_key"
-CLOUDINARY_CLOUD_NAME="your_cloud_name"
-CLOUDINARY_API_KEY="your_cloudinary_api_key"
-CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
+# PostgreSQL Database Connection
+DATABASE_URL="postgresql://<username>:<password>@<host>/<database_name>?sslmode=require&channel_binding=require"
+
+# Admin API Keys (used for authentication or admin actions)
+ADMIN_API_KEY="your_admin_api_key_here"
+NEXT_PUBLIC_ADMIN_API_KEY="your_public_admin_api_key_here"
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME="your_cloudinary_cloud_name_here"
+CLOUDINARY_API_KEY="your_cloudinary_api_key_here"
+CLOUDINARY_API_SECRET="your_cloudinary_api_secret_here"
+
+# Admin Upload Keys (for secure uploads)
+ADMIN_UPLOAD_KEY="your_admin_upload_key_here"
+NEXT_PUBLIC_ADMIN_UPLOAD_KEY="your_public_admin_upload_key_here"
+
 ```
 
 ### 4. Database Setup
