@@ -165,7 +165,9 @@ export default async function DashboardPage() {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {lowStockProducts.map((product) => (
+                  {lowStockProducts.map((product) =>{ 
+                    const isOut = product.inventory == 0;
+                    return(
                     <tr key={product.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
@@ -195,11 +197,13 @@ export default async function DashboardPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                          Low Stock
+                          {isOut ? "Out Of Stock" : "Low Stock"}
                         </span>
                       </td>
                     </tr>
-                  ))}
+                  )
+                }
+                  )}
                 </tbody>
               </table>
             </div>
@@ -240,6 +244,7 @@ export default async function DashboardPage() {
               <tbody className="bg-white divide-y divide-gray-200">
                 {products.map((product) => {
                   const isLow = product.inventory < 30;
+                  const isOut = product.inventory == 0;
                   return (
                     <tr key={product.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -276,7 +281,7 @@ export default async function DashboardPage() {
                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           isLow ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                         }`}>
-                          {isLow ? 'Low Stock' : 'In Stock'}
+                          {isOut? 'Out Of Stock' : isLow ? 'Low Stock' : 'In Stock'}
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">

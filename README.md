@@ -2,6 +2,9 @@
 
 # E-Commerce Product Catalog 
 
+**Name - Md Kaif Nawaz Khurram**
+**Date - 
+
 This project is a full-stack web application built using **Next.js 16**, **TypeScript**, **PostgreSQL (Neon)**, and **Cloudinary**.  
 It demonstrates multiple **Next.js rendering strategies** — **SSG**, **ISR**, **SSR**, and **CSR** — to balance performance, scalability, and real-time data updates.
 
