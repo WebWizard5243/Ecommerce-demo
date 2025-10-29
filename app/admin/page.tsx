@@ -284,12 +284,12 @@ export default function AdminPage() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <h1 className="text-xl lg:text-3xl font-bold text-gray-900">Admin Panel</h1>
+            <h1 className="text-lg lg:text-3xl font-bold text-gray-900">Admin Panel</h1>
             <div className="flex items-center gap-4">
               <nav className="space-x-4">
-                <Link href="/" className=" text-md  lg:text-lg text-blue-600 hover:text-blue-800">Home</Link>
-                <Link href="/dashboard" className="text-md lg:text-lg text-blue-600 hover:text-blue-800">Dashboard</Link>
-                <Link href="/admin" className="text-md lg:text-lg text-blue-600 hover:text-blue-800 font-semibold">Admin</Link>
+                <Link href="/" className=" text-sm  lg:text-lg text-blue-600 hover:text-blue-800">Home</Link>
+                <Link href="/dashboard" className="text-sm lg:text-lg text-blue-600 hover:text-blue-800">Dashboard</Link>
+                <Link href="/admin" className="text-sm lg:text-lg text-blue-600 hover:text-blue-800 font-semibold">Admin</Link>
               </nav>
               <button
                 onClick={handleLogout}

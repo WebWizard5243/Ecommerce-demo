@@ -1,40 +1,73 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# E-Commerce Product Catalog 
+
+This project is a full-stack web application built using **Next.js 16**, **TypeScript**, **PostgreSQL (Neon)**, and **Cloudinary**.  
+It demonstrates multiple **Next.js rendering strategies** — **SSG**, **ISR**, **SSR**, and **CSR** — to balance performance, scalability, and real-time data updates.
+
+---
+## Features 
+
+* Product catalog with search and category filters
+
+* Product detail pages with ISR regeneration
+
+* Admin panel for product management
+
+* Cloudinary integration for image uploads
+
+* PostgreSQL database with live connection
+
+* Responsive UI using Tailwind CSS
+
+## How to Run the Project
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/WebWizard5243/Ecommerce-demo.git
+cd Ecommerce-demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Install Dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
 
-## Learn More
+### 3. Setup Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+DATABASE_URL="postgresql://user:password@host:port/database"
+ADMIN_API_KEY="your_admin_key"
+CLOUDINARY_CLOUD_NAME="your_cloud_name"
+CLOUDINARY_API_KEY="your_cloudinary_api_key"
+CLOUDINARY_API_SECRET="your_cloudinary_api_secret"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+###4. Database Setup
 
-## Deploy on Vercel
+Run the following SQL commands in your PostgreSQL (Neon) database:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  slug VARCHAR(255) UNIQUE,
+  price DECIMAL(10,2),
+  category VARCHAR(100),
+  inventory INTEGER,
+  image_urls TEXT[]
+);
+  ### 5. Start the Development Server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Ecommerce-demo
->>>>>>> 47d20e0f57260129888651e6ae99eaccec8a539f
+  npm run dev
+
+  ## Folder Structure 
+  app/
+├── page.tsx               # Home page (SSG)
+├── products/[slug]/       # Product details (ISR)
+├── dashboard/page.tsx     # Inventory dashboard (SSR)
+├── admin/page.tsx         # Admin panel (CSR)
+├── api/products/          # Product APIs
+├── api/upload/            # Image upload API
+lib/
+└── db.ts                  # Database connection & helper functions
+
+
